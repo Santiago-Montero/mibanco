@@ -1,23 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/estilo.css">
-
-    <title>Hello, world!</title>
+    <title>Mi Banco</title>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <header id="sidebar">
+        <div class="toggle-btn">
+            <span>&#9776</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Prestamos</a></li>
+                <li><a href="">Comprar Dolares</a></li>
+                <li><a href="">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div id="inicio">
+            <div class="inicioImg">
+                <img src="./img/sesion.png" alt="">
+            </div>
+            <div class="inicioForm">
+                <form class="form">
+                    <h2>Inicia Sesion</h2>
+                    <p><input type="text" class="formLlenar" placeholder="Nombre y Apellido"></input></p>
+                    <p><input type="email" class="formLlenar" placeholder="Mail"></input></p>
+                    <button class="botonInicio">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./app.js"></script>
 </body>
 </html>
