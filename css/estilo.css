@@ -108,3 +108,29 @@ nav {
 .botonInicio:hover {
   background: #5A3BFD;
   color: #fff; }
+
+@media (max-width: 1000px) {
+  #inicio {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; }
+  .inicioImg {
+    display: flex;
+    justify-content: center; }
+    .inicioImg img {
+      width: 60vw;
+      height: auto; }
+  .inicioForm {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center; }
+  .form {
+    width: 40vw;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; } }
