@@ -8,11 +8,11 @@ btnToggle.addEventListener('click', function () {
     console.log(document.getElementById('sidebar'))
 });
 //
-
 class Usuario{
     constructor(nombreApellido, mail) {
         this.nombreApellido = nombreApellido;
         this.mail = mail;
+        // this.plata = 0;
     }
     msjBienvenida(){
         alert(`Tus datos se guardaron correctamente `+ this.nombreApellido);
@@ -43,3 +43,5 @@ const prestamo1 = new Prestamo ("500");
 prestamo1.sumarInteres();
 prestamo1.aprobarPrestamo();
 console.log(prestamo1);
+
+const arrayUsuarios = [usuarioNuevo]

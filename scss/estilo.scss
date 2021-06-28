@@ -102,6 +102,8 @@ nav{
     border-bottom:2px solid #000000;
 }
 .botonInicio{
+    display: flex;
+    justify-content: center;
     padding:8px 12px;
     margin:8px 0 0;
     border:2px solid #5A3BFD;
@@ -114,7 +116,6 @@ nav{
     background:#5A3BFD;
     color:#fff;
 }
-
 @media (max-width:1000px){
     #inicio{
         display: flex;
