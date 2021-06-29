@@ -77,7 +77,7 @@ let deMasRicoAMasPobre = usuarios.sort(function(a,b){
 })
 console.log(deMasRicoAMasPobre);
 
-let nombreConsulta = prompt("Ingrese el nombre para consultar el saldo");
+let nombreConsulta = prompt("Ingrese el nombre del usuario para consultar el saldo");
 const buscarSaldo = (cliente) => {
     let clienteEncontrado = usuarios.find(usuarios => usuarios.nombreApellido == cliente);
     if(clienteEncontrado){
