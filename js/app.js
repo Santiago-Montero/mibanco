@@ -55,12 +55,14 @@ const mati  = new Usuario ("mati", "mati@gmail.com", 5000);
 const juan  = new Usuario ("juan", "juani@gmail.com", 0);
 
 
-let usuarioNombre = prompt("Ingrese su nombre");
-let usuarioMail =  prompt("Ingrese su mail");
-let usuarioPlata = Number( prompt("Ingrese su plata"));
-const usuarioNuevo = new Usuario (usuarioNombre,usuarioMail,usuarioPlata);
+// let usuarioNombre = prompt("Ingrese su nombre");
+// let usuarioMail =  prompt("Ingrese su mail");
+// let usuarioPlata = Number( prompt("Ingrese su plata"));
 
-const usuarios = [usuarioNuevo,santi,gero,mati,juan];
+//const usuarioNuevo = new Usuario (usuarioNombre,usuarioMail,usuarioPlata);
+
+//const usuarios = [usuarioNuevo,santi,gero,mati,juan];
+const usuarios = [santi,gero,mati,juan];
 
 dolar.consultar(100);
 libra.consultar(100);
@@ -77,7 +79,7 @@ let deMasRicoAMasPobre = usuarios.sort(function(a,b){
 })
 console.log(deMasRicoAMasPobre);
 
-let nombreConsulta = prompt("Ingrese el nombre del usuario para consultar el saldo");
+//let nombreConsulta = prompt("Ingrese el nombre del usuario para consultar el saldo");
 const buscarSaldo = (cliente) => {
     let clienteEncontrado = usuarios.find(usuarios => usuarios.nombreApellido == cliente);
     if(clienteEncontrado){
@@ -86,4 +88,4 @@ const buscarSaldo = (cliente) => {
         console.log(`No existe ese usuario`);
     }
 } 
-buscarSaldo(nombreConsulta);
+// buscarSaldo(nombreConsulta);
