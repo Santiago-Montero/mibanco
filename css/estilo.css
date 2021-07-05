@@ -111,6 +111,20 @@ nav {
   background: #5A3BFD;
   color: #fff; }
 
+.tablaUsu {
+  display: flex;
+  justify-content: center; }
+
+table {
+  width: 75vw;
+  border: 1px solid #000; }
+  table th, table td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-spacing: 0; }
+
 @media (max-width: 1000px) {
   #inicio {
     display: flex;

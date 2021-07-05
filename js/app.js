@@ -44,6 +44,19 @@ class Prestamo{
         this.aprobado = true;
     }
 }
+/*
+let botonInicioS = document.getElementById("btnInicioSesion")
+botonInicioS.addEventListener("click", guardarDatos)
+
+function guardarDatos(){
+    let nomApe = document.getElementById("nombreApellido").value ;
+    let mail = document.getElementById("mail").value ;
+    const usuarioNuevo = new Usuario (nomApe,mail,0);
+    console.log(` ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ${usuarioNuevo}`);
+}
+guardarDatos();
+*/
+
 const dolar = new Moneda ("Dolar", "EEUU", 95.52);
 const libra = new Moneda ("Libra", "Reino Unido", 132.47);
 const yenJapones = new Moneda ("Yen japonés", "Japon", 0.86);
@@ -52,7 +65,7 @@ const monedas = [dolar,libra,yenJapones];
 const santi = new Usuario ("santi", "santi@gmail.com", 1000);
 const gero  = new Usuario ("gero", "gero@gmail.com", 8000);
 const mati  = new Usuario ("mati", "mati@gmail.com", 5000);
-const juan  = new Usuario ("juan", "juani@gmail.com", 0);
+const juan  = new Usuario ("juan", "juani@gmail.com", 5);
 
 
 // let usuarioNombre = prompt("Ingrese su nombre");
@@ -62,6 +75,7 @@ const juan  = new Usuario ("juan", "juani@gmail.com", 0);
 //const usuarioNuevo = new Usuario (usuarioNombre,usuarioMail,usuarioPlata);
 
 //const usuarios = [usuarioNuevo,santi,gero,mati,juan];
+
 const usuarios = [santi,gero,mati,juan];
 
 dolar.consultar(100);
@@ -89,3 +103,12 @@ const buscarSaldo = (cliente) => {
     }
 } 
 // buscarSaldo(nombreConsulta);
+
+let infoUsuario = document.getElementById("usuarios");
+for (const usu of usuarios){
+    let contenedor = document.createElement("tr");
+    contenedor.innerHTML = `<td>${usu.nombreApellido}</td> 
+                            <td>${usu.mail}</td> 
+                            <td>${usu.plata}</td>`
+    infoUsuario.appendChild(contenedor);
+}
