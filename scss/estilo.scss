@@ -116,6 +116,12 @@ nav{
     background:#5A3BFD;
     color:#fff;
 }
+#historial{
+    display: none;
+}
+#usuarioHistorial{
+    display: none;
+}
 .tablaUsu{
     display: flex;
     justify-content: center;
@@ -132,6 +138,11 @@ table {
     }
 }
 
+.monedas{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
 @media (max-width:1000px){
     #inicio{
         display: flex;
@@ -168,17 +179,17 @@ table {
 
 .contenido{
     display: flex;
-    padding-right: 5vw;
-    padding-left: 5vw;
+    padding-right: 10vw;
+    padding-left: 10vw;
     margin-right: auto;
     margin-left: auto;
 }
 .home{
     display: flex;
     justify-content: center;
-    background-image: url("../img/a.jpg");
-    background-size: contain;
-    background-color: brown;
+    background-image: url("../img/homemoney.jpg");
+	background-size: cover;
+    background-color: rgb(245, 245, 245);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -186,10 +197,10 @@ table {
     height: 40vh;
     .homeContenedor{
         position: absolute; 
-        top: 25vh;
+        top: 35vh;
         z-index: 2;
-        width: 75vw;
-        height: 25vh;
+        width: 50vw;
+        height: 10vh;
         background: rgba( 255, 255, 255, 0.35 );
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 12.0px );
