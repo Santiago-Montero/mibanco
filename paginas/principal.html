@@ -23,34 +23,21 @@
     <div class="contenido">
         <div class="home">
             <div class="homeContenedor">
-                <div class="monedas">
-                    <div class="monedaExtranjera">
-                        <p id="nombreMoneda">Nombre</p>
-                        <p>Compra</p>
-                        <p id="compraMoneda">Valor</p>
-                    </div>
-                    <div class="monedaExtranjera">
-                        <p id="nombreMoneda">Nombre</p>
-                        <p>Compra</p>
-                        <p id="compraMoneda">Valor</p>
-                    </div>
-                    <div class="monedaExtranjera">
-                        <p id="nombreMoneda">Nombre</p>
-                        <p>Compra</p>
-                        <p id="compraMoneda">Valor</p>
-                    </div>
+                <div class="monedas" id="monedas">                          
                 </div>
             </div>
         </div>
     </div>
     <div class= "contenido">
-        <div id="pedirUnPrestamo">
+        <div class = "contenedorPrestamo" id="pedirUnPrestamo">
             <h2>Prestamos</h2>
             <div class="prestamoDatos">
-                
+                <input type="number" id="montoPrestamo">
+                <button id = "btnPedirPrestamo">Pedir Prestamo</button>
             </div>
         </div>
         <div id="historial">
+            <h2>Historial de Usuarios</h2>
             <button id="btnMostrarHistorial" >Mostrar Usuarios</button>
             <div id="usuarioHistorial">
                 <div class="tablaUsu">
@@ -71,8 +58,12 @@
         </div>
     </div>
     <div class= "contenido">
-        <div id="comprarMonedaExtran">
+        <div class = "contenedorMonedaExtran" id="comprarMonedaExtran">
             <h2>Compra Moneda</h2>
+            <div class="compraDatos">
+                <input type="number" id="montoMoneda">
+                <button id = "btnComprarMoneda">Comprar</button>
+            </div>
         </div>
     </div>
     

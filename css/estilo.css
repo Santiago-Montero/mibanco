@@ -131,6 +131,12 @@ table {
     border: 1px solid #000;
     border-spacing: 0; }
 
+.contenedorPrestamo {
+  margin-top: 10vh; }
+
+.contenedorMonedaExtran {
+  margin-top: 10vh; }
+
 .monedas {
   display: flex;
   flex-flow: row wrap;

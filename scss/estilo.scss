@@ -137,12 +137,19 @@ table {
         border-spacing: 0;
     }
 }
+.contenedorPrestamo{
+    margin-top: 10vh;
 
+}
+.contenedorMonedaExtran{
+    margin-top: 10vh;
+}
 .monedas{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
+
 @media (max-width:1000px){
     #inicio{
         display: flex;

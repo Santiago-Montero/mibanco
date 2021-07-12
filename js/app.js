@@ -1,16 +1,16 @@
 class Moneda{
-    constructor(nombreMoneda,origen,ventaPorPeso,compraPorElPeso){
+    constructor(nombreMoneda,origen,ventaConElPeso,compraConElPeso){
         this.nombreMoneda = nombreMoneda;
         this.origen = origen;
-        this.ventaConElPeso = ventaPorPeso;
-        this.compraConElPeso = compraPorElPeso;
+        this.ventaConElPeso = ventaConElPeso;
+        this.compraConElPeso = compraConElPeso;
     }
     venta(monto){
-        let total = monto * this.ventaPorPeso ;
+        let total = monto * this.ventaConElPeso ;
         console.log(`${monto} serian ${total} en la moneda ${this.nombreMoneda}`)
     }
     compra(monto){
-        let total = monto * this.compraPorElPeso ;
+        let total = monto * this.compraConElPeso ;
         console.log(`${monto} en ${this.nombreMoneda} serian ${total} pesos`)
     }
 }
@@ -24,19 +24,18 @@ class Usuario{
     ingresarPlata(monto){
         this.plata = this.plata + monto;
     }
-    msjBienvenida(){
-        alert(`Tus datos se guardaron correctamente `+ this.nombre);
-    }
 }
 class Prestamo{
-    constructor(plataPedida){
+    constructor(plataPedida, usuario){
+        this.usuario = usuario;
         this.plataPedida = parseFloat(plataPedida);
         this.aprobado = false;
+        this.interes = 0;
     }
     sumarInteres() {
-        this.plataPedida = this.plataPedida + (this.plataPedida * 0.3) ;
-    }
-    aprobarPrestamo() {
+        this.usuario.plata += this.plataPedida
+        this.plataPedida = this.plataPedida
+        this.interes = this.interes + this.plataPedida + (this.plataPedida * 0.3)
         this.aprobado = true;
     }
 }
@@ -52,11 +51,13 @@ const mati  = new Usuario ("mati","mati", "mati@gmail.com", 5000);
 const juan  = new Usuario ("juan","juan", "juani@gmail.com", 5);
 
 let botonInicioS = document.getElementById("btnInicioSesion");
-
 if (botonInicioS){
     botonInicioS.addEventListener("click", mostrar);
 }
-
+function guardarDatos(nombre, apellido, mail) {
+    const nuevoUsu = new Usuario (nombre, apellido, mail, 0)
+    localStorage.setItem("usuarioNuevo", JSON.stringify(nuevoUsu))
+}
 function mostrar(e) {
     e.preventDefault()
     let nombre = document.getElementById("nombre").value
@@ -65,13 +66,47 @@ function mostrar(e) {
     guardarDatos(nombre, apellido, mail)
     alert(`Muchas gracias ${nombre} ${apellido} te registrate con el mail ${mail}`);
 }
-function guardarDatos(nombre, apellido, mail) {
-    const nuevoUsu = new Usuario (nombre, apellido, mail, 0)
-    localStorage.setItem("usuarioNuevo", JSON.stringify(nuevoUsu))
-}
-let datosUsu = JSON.parse(localStorage.getItem("usuarioNuevo"))
+let datosUsu = JSON.parse(localStorage.getItem("usuarioNuevo"));
 
 const usuarios = [santi,gero,mati,juan,datosUsu];
+
+let btnPedirPrestamo = document.getElementById("btnPedirPrestamo");
+if(btnPedirPrestamo){
+    btnPedirPrestamo.addEventListener("click", pedirPrestamo);
+}
+function pedirPrestamo(){
+    let montoPrestamo = document.getElementById("montoPrestamo").value;
+    let nuevoPrestamo = new Prestamo(montoPrestamo, datosUsu);
+    nuevoPrestamo.sumarInteres();
+    console.log(nuevoPrestamo);
+}
+
+let mostrarHisotrial = document.getElementById("btnMostrarHistorial");
+if (mostrarHisotrial){
+    mostrarHisotrial.addEventListener("click", mostrarHistorial);
+}
+function mostrarHistorial(){
+    document.getElementById("usuarioHistorial").style.display = "block"
+    let infoUsuario = document.getElementById("usuarios");
+    for (const usu of usuarios){
+        let contenedor = document.createElement("tr");
+        contenedor.innerHTML = `<td>${usu.nombre}</td> 
+                                <td>${usu.apellido}</td> 
+                                <td>${usu.mail}</td> 
+                                <td>${usu.plata}</td>`
+        infoUsuario.appendChild(contenedor);
+    }
+}
+
+let monedaContenedor = document.getElementById("monedas");
+for(const moneda of monedas){
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h3>${moneda.nombreMoneda}</h3>
+                            <p> Compra: $ <b>${moneda.compraConElPeso}</b></p>
+                            <p> Venta: $ <b>${moneda.ventaConElPeso}</b></p>`
+    console.log(contenedor);
+    monedaContenedor.appendChild(contenedor);
+}
 
 // banco Vende
 dolar.venta(100);
@@ -81,12 +116,6 @@ yenJapones.venta(100);
 dolar.compra(100);
 libra.compra(100);
 yenJapones.compra(100);
-
-juan.ingresarPlata(2000);
-const prestamo1 = new Prestamo ("500");
-prestamo1.sumarInteres();
-prestamo1.aprobarPrestamo();
-console.log(prestamo1);
 
 // ORDENAR DE MAS PLATA A MENOS
 // let deMasRicoAMasPobre = usuarios.sort(function(a,b){
@@ -106,21 +135,7 @@ console.log(prestamo1);
 //     }
 // } 
 // buscarSaldo(nombreConsulta);
-let mostrarHisotrial = document.getElementById("btnMostrarHistorial");
-if (mostrarHisotrial){
-    mostrarHisotrial.addEventListener("click", mostrarHistorial);
-}
-function mostrarHistorial(){
-    document.getElementById("usuarioHistorial").style.display = "block"
-    let infoUsuario = document.getElementById("usuarios");
-    for (const usu of usuarios){
-        let contenedor = document.createElement("tr");
-        contenedor.innerHTML = `<td>${usu.nombre}</td> 
-                                <td>${usu.apellido}</td> 
-                                <td>${usu.mail}</td> 
-                                <td>${usu.plata}</td>`
-        infoUsuario.appendChild(contenedor);
-    }
-}
+
+
 
 
