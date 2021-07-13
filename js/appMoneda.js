@@ -21,14 +21,17 @@ const yenJapones = new Moneda ("Yen japonés", "Japon", 0.86, 0.40);
 const monedas = [dolar,libra,yenJapones];
 
 let monedaContenedor = document.getElementById("monedas");
-for(const moneda of monedas){
-    let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h3>${moneda.nombreMoneda}</h3>
-                            <p> Compra: $ <b>${moneda.compraConElPeso}</b></p>
-                            <p> Venta: $ <b>${moneda.ventaConElPeso}</b></p>`
-    console.log(contenedor);
-    monedaContenedor.appendChild(contenedor);
+if(monedaContenedor != null){
+    for(const moneda of monedas){
+        let contenedor = document.createElement("div");
+        contenedor.innerHTML = `<h3>${moneda.nombreMoneda}</h3>
+                                <p> Compra: $ <b>${moneda.compraConElPeso}</b></p>
+                                <p> Venta: $ <b>${moneda.ventaConElPeso}</b></p>`
+        console.log(contenedor);
+        monedaContenedor.appendChild(contenedor);
+    }
 }
+
 
 // banco Vende
 dolar.venta(100);
