@@ -159,11 +159,62 @@ table {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18); }
 
-.contenedorPrestamo {
+.contenedorPrincipal {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
   margin-top: 10vh; }
 
+.contenedorPrestamo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .contenedorPrestamo .contenedorPrestamoInfo {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center; }
+    .contenedorPrestamo .contenedorPrestamoInfo h2 {
+      font-size: 50px; }
+  .contenedorPrestamo .contenedorPrestamoImg img {
+    width: 50vw;
+    height: auto; }
+
 .contenedorMonedaExtran {
-  margin-top: 10vh; }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .contenedorMonedaExtran .contenedorMonedaInfo {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center; }
+    .contenedorMonedaExtran .contenedorMonedaInfo h2 {
+      font-size: 50px; }
+  .contenedorMonedaExtran .contenedorMonedaImg img {
+    width: 45vw;
+    height: auto; }
+
+.contenedorHistorial {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center; }
+  .contenedorHistorial .contenedorHistorialInfo {
+    display: flex; }
+    .contenedorHistorial .contenedorHistorialInfo #historial {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center; }
+    .contenedorHistorial .contenedorHistorialInfo h2 {
+      font-size: 50px; }
+  .contenedorHistorial .contenedorHistorialImg img {
+    width: 50vw;
+    height: auto; }
 
 .monedas {
   margin-top: 10px;

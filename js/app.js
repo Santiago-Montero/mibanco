@@ -36,18 +36,21 @@ let datosUsu = JSON.parse(localStorage.getItem("usuarioNuevo"));
 const usuarios = [santi,gero,mati,juan,datosUsu];
 
 
-$("#btnMostrarHistorial").click(function mostrarHistorial(){
+$("#btnMostrarHistorial").click( mostrarHistorial);
+
+function mostrarHistorial(){
     $("#usuarioHistorial").show()
-    console.log("hola");
     for (const usu of usuarios){
-    $("#usuarios").append( `<tr>
-                            <td>${usu.nombre}</td> 
-                            <td>${usu.apellido}</td> 
-                            <td>${usu.mail}</td> 
-                            <td>${usu.plata}</td>
-                            </tr>`
-    );}    
-});
+        $("#usuarios").append( `<tr>
+                                <td>${usu.nombre}</td> 
+                                <td>${usu.apellido}</td> 
+                                <td>${usu.mail}</td> 
+                                <td>${usu.plata}</td>
+                                </tr>`
+        );
+    }    
+}
+
 
 // ORDENAR DE MAS PLATA A MENOS
 // let deMasRicoAMasPobre = usuarios.sort(function(a,b){
