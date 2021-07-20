@@ -116,9 +116,6 @@ nav{
     background:#5A3BFD;
     color:#fff;
 }
-#historial{
-    display: none;
-}
 #usuarioHistorial{
     display: none;
 }
@@ -137,6 +134,38 @@ table {
         border-spacing: 0;
     }
 }
+.contenido{ //contenido = container casero de boostrap
+    display: flex;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    background-image: url("../img/homemoney.jpg");
+	background-size: cover;
+    background-color: rgb(245, 245, 245);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    width: 100vw;
+    height: 40vh;
+    .homeContenedor{
+        position: absolute; 
+        top: 35vh;
+        z-index: 2;
+        width: 50vw;
+        height: 10vh;
+        background: rgba( 255, 255, 255, 0.35 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 12.0px );
+        -webkit-backdrop-filter: blur( 12.0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+}
 .contenedorPrestamo{
     margin-top: 10vh;
 
@@ -145,6 +174,7 @@ table {
     margin-top: 10vh;
 }
 .monedas{
+    margin-top: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -182,37 +212,4 @@ table {
     }
 }
 
-// probando 
 
-.contenido{
-    display: flex;
-    padding-right: 10vw;
-    padding-left: 10vw;
-    margin-right: auto;
-    margin-left: auto;
-}
-.home{
-    display: flex;
-    justify-content: center;
-    background-image: url("../img/homemoney.jpg");
-	background-size: cover;
-    background-color: rgb(245, 245, 245);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    width: 100vw;
-    height: 40vh;
-    .homeContenedor{
-        position: absolute; 
-        top: 35vh;
-        z-index: 2;
-        width: 50vw;
-        height: 10vh;
-        background: rgba( 255, 255, 255, 0.35 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 12.0px );
-        -webkit-backdrop-filter: blur( 12.0px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
-}

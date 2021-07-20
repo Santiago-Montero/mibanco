@@ -13,10 +13,8 @@ class Prestamo{
     }
 }
 
-
-let btnPedirPrestamo = document.getElementById("btnPedirPrestamo");
-if(btnPedirPrestamo){
-    btnPedirPrestamo.addEventListener("click", pedirPrestamo);
+if($("#btnPedirPrestamo")){
+    $("#btnPedirPrestamo").click(pedirPrestamo);
 }
 function pedirPrestamo(){
     let montoPrestamo = document.getElementById("montoPrestamo").value;

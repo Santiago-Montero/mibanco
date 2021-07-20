@@ -20,15 +20,13 @@ const libra = new Moneda ("Libra", "Reino Unido", 132.47, 127);
 const yenJapones = new Moneda ("Yen japonés", "Japon", 0.86, 0.40);
 const monedas = [dolar,libra,yenJapones];
 
-let monedaContenedor = document.getElementById("monedas");
-if(monedaContenedor != null){
+
+if($("#monedas") != null){
     for(const moneda of monedas){
-        let contenedor = document.createElement("div");
-        contenedor.innerHTML = `<h3>${moneda.nombreMoneda}</h3>
+        $("#monedas").append(`  <div>
+                                <h3>${moneda.nombreMoneda}</h3>
                                 <p> Compra: $ <b>${moneda.compraConElPeso}</b></p>
-                                <p> Venta: $ <b>${moneda.ventaConElPeso}</b></p>`
-        console.log(contenedor);
-        monedaContenedor.appendChild(contenedor);
+                                <p> Venta: $ <b>${moneda.ventaConElPeso}</b></p></div>`)
     }
 }
 
